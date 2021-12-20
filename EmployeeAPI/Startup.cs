@@ -35,8 +35,6 @@ namespace EmployeeAPI
             });
 
             services.AddSingleton<IEmployeeManagementService, EmployeeManagementService>();
-
-
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

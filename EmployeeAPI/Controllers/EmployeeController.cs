@@ -22,12 +22,14 @@ namespace EmployeeAPI.Controllers
         [HttpGet]
         public void GetEmployeeByID(Guid employeeID)
         {
+            _logger.LogInformation("Getting employee with ID : " + employeeID);
             _employeeManagementService.GetEmployeeByID(employeeID);
         }
 
         [HttpPost]
         public Guid CreateEmployee(string firstName, string lastName, string city, int socialSecurityNumber)
         {
+            _logger.LogInformation("Saving new employee to database");
             var employeeID = new Guid();
             _employeeManagementService.CreateNewEmployee(employeeID, firstName, lastName, city, socialSecurityNumber);
             return employeeID;
